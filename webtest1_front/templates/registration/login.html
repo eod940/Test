@@ -1,0 +1,60 @@
+<!doctype html>
+{% load static %}
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'mgSite/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'mgSite/litera/signin.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'mgSite/litera/bootstrap.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'mgSite/_assets/css/custom.min.css' %}" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="logo" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+      <label for="id_username" class="sr-only"></label>
+      <input type="email" class="form-control" id="id_username"
+                placeholder="이메일" name="username" required autofocus>
+      <label for="id_password" class="sr-only"></label>
+      <input type="password" class="form-control" id="id_password"
+                placeholder="비밀번호" name="password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      {% if form.errors %}
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Failed!</strong> Invalid value.
+        </div>
+      {% endif%}
+
+      {% if next %}
+        {% if user.is_authenticated %}
+            <p>페이지에 대한 접근 권한이 없습니다. 접근 권한을 가진 계정으로 로그인해주세요.</p>
+        {% else %}
+            <p>페이지를 보시려면 로그인을 해주세요.</p>
+        {% endif %}
+      {% endif %}
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+  </body>
+</html>

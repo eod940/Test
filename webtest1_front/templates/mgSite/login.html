@@ -1,0 +1,29 @@
+<!doctype html>
+{% load static %}
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'mgSite/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'mgSite/litera/signin.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'mgSite/litera/bootstrap.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'mgSite/_assets/css/custom.min.css' %}" rel="stylesheet" type="text/css">
+  </head>
+
+  <body class="text-center">
+  {% csrf_token %}
+
+
+  </body>
+</html>
