@@ -6,3 +6,8 @@ body{padding-top:80px}pre{background:#f7f7f9}iframe{overflow:hidden;border:none}
  #logo{ width:100px; }
  #navbar1{ margin-top:60px; border-top:#fff;}
  #navbar{ border-bottom: #fff;}
+ .board{ width: 25%; height: 50px; line-height: 50px; }
+ .class1{ background-color: black;}
+ .class2{ background-color: brown;}
+ .class3{ background-color: yellow;}
+ .class4{ background-color: green;}
